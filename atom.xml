@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-05-03T16:11:25.899Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于COMS电池漏电导致的时间不同步</title>
+    <link href="http://yoursite.com/2020/05/04/%E5%85%B3%E4%BA%8ECOMS%E7%94%B5%E6%B1%A0%E6%BC%8F%E7%94%B5%E5%AF%BC%E8%87%B4%E7%9A%84%E6%97%B6%E9%97%B4%E4%B8%8D%E5%90%8C%E6%AD%A5/"/>
+    <id>http://yoursite.com/2020/05/04/%E5%85%B3%E4%BA%8ECOMS%E7%94%B5%E6%B1%A0%E6%BC%8F%E7%94%B5%E5%AF%BC%E8%87%B4%E7%9A%84%E6%97%B6%E9%97%B4%E4%B8%8D%E5%90%8C%E6%AD%A5/</id>
+    <published>2020-05-03T16:11:18.064Z</published>
+    <updated>2020-05-03T16:11:25.899Z</updated>
+    
+    <content type="html"><![CDATA[        <h2 id="Windows时间不同步解决方案"   >          <a href="#Windows时间不同步解决方案" class="heading-link"><i class="fas fa-link"></i></a>Windows时间不同步解决方案</h2>              <h3 id="1-问题"   >          <a href="#1-问题" class="heading-link"><i class="fas fa-link"></i></a>1.问题</h3>      <p>&ensp;&ensp;&ensp;&ensp;Windows每隔一个小时左右跳回上次同步时间</p>        <h3 id="2-解决方案"   >          <a href="#2-解决方案" class="heading-link"><i class="fas fa-link"></i></a>2.解决方案</h3>              <h4 id="ensp-ensp-I-注册表项"   >          <a href="#ensp-ensp-I-注册表项" class="heading-link"><i class="fas fa-link"></i></a>&ensp;&ensp;I.注册表项</h4>      <p>&ensp;&ensp;&ensp;&ensp;Win+R -&gt; regedit，找到项:</p><blockquote><p>计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient</p></blockquote><p>&ensp;&ensp;&ensp;&ensp;将 <strong>SpecialPollInterval</strong> 项的值（十进制，单位秒）改成所需，我这里改成<strong>1200</strong>（20分钟）。<br>&ensp;&ensp;&ensp;&ensp;新建项 <strong>SpecialInterval</strong> （DWORD 32位） 将值设定为<strong>1</strong></p>        <h4 id="ensp-ensp-II-服务项"   >          <a href="#ensp-ensp-II-服务项" class="heading-link"><i class="fas fa-link"></i></a>&ensp;&ensp;II.服务项</h4>      <p>&ensp;&ensp;&ensp;&ensp;Win+R -&gt; services.msc, 找到服务<strong>Windows Time</strong>，重新启动</p>        <h4 id="ensp-ensp-III-本地项"   >          <a href="#ensp-ensp-III-本地项" class="heading-link"><i class="fas fa-link"></i></a>&ensp;&ensp;III.本地项</h4>      <p>&ensp;&ensp;&ensp;&ensp;控制面板 -&gt; 时钟和区域 -&gt; 设置日期和时间 -&gt; Internet时间 -&gt; 更改设置 -&gt; 立即更新 即可.</p>        <h3 id="3-其他方案"   >          <a href="#3-其他方案" class="heading-link"><i class="fas fa-link"></i></a>3.其他方案</h3>      <p>&ensp;&ensp;&ensp;&ensp;<strong>此方案似乎不可行</strong><br>&ensp;&ensp;&ensp;&ensp;wget.exe下载地址：<span class="exturl"><a class="exturl__link"   href="https://sourceforge.net/projects/unxutils/"  target="_blank" rel="noopener">点此进入</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>&ensp;&ensp;&ensp;&ensp;Win+R -&gt; cmd -&gt; cd 到wget.exe在的地方<br>&ensp;&ensp;&ensp;&ensp;找一个有北京时间的网页 -&gt; wget -O “xxx.txt” “(website)” -q<br>&ensp;&ensp;&ensp;&ensp;下载下来通过批处理(.bat)更新时间即可，<del>具体我不会</del></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        &lt;h2 id=&quot;Windows时间不同步解决方案&quot;   &gt;
+          &lt;a href=&quot;#Windows时间不同步解决方案&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;Windows时间不同
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>用Hexo搭建Blog（Windows）</title>
+    <link href="http://yoursite.com/2020/04/29/%E7%94%A8Hexo%E6%90%AD%E5%BB%BABlog%EF%BC%88Windows%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/04/29/%E7%94%A8Hexo%E6%90%AD%E5%BB%BABlog%EF%BC%88Windows%EF%BC%89/</id>
+    <published>2020-04-29T10:15:18.527Z</published>
+    <updated>2020-04-29T11:05:31.279Z</updated>
+    
+    <content type="html"><![CDATA[        <h2 id="1-准备工作"   >          <a href="#1-准备工作" class="heading-link"><i class="fas fa-link"></i></a>1. 准备工作</h2>      <ul><li><p><strong>1.0 注册Github</strong></p><p><strong>Sign up：</strong><span class="exturl"><a class="exturl__link"   href="https://github.com/"  target="_blank" rel="noopener">点此进入</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p><p>注意Username就是你的Blog网站名字</p><p>如Username = “test”，你的网址就是 “test.github.io”</p><p>使用Git “Fork” + 码云右上角 “+” 导入可以快速下载Github上的文件</p></li><li><p><strong>1.1. 安装git</strong></p><p><strong>官网：</strong><span class="exturl"><a class="exturl__link"   href="https://git-scm.com/"  target="_blank" rel="noopener">点此进入</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p><p><strong>镜像站：</strong><span class="exturl"><a class="exturl__link"   href="https://github.com/waylau/git-for-win"  target="_blank" rel="noopener">点此进入</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p><p>第一步Next</p><p><img src="/images/st1.png" alt=""></p><p>这里默认勾选不用动，最后两项可选可不选</p><p>下一步选编译器默认（Use Vim）即可</p><p><img src="/images/st2.png" alt=""></p><p>这里默认选第二个就好</p><p>下一步默认（OpenSSL）即可</p><p><img src="/images/st3.png" alt=""></p><p>换行符的配置，选择第一个（Windows-Style）-&gt; \n\r</p><p>后面全部默认即可</p><p>安装好后可以在cmd输入git确认</p></li><li><p><strong>1.2. 安装Nodejs</strong></p><p>官网：<span class="exturl"><a class="exturl__link"   href="https://nodejs.org/en/"  target="_blank" rel="noopener">点此进入</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p><p>安装时一定要勾选<strong>Add To Path</strong> </p><p>安装完成后打开cmd输入node确认，输出”Welcome to Node.js”即安装成功</p><p>如果找不到，手动右键此电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量-&gt;编辑变量Path</p><p><strong>把nodejs的安装路径添加进去</strong></p></li><li><p><strong>1.3. 安装Hexo</strong></p><p>Hexo就是博客的框架</p><p>在任意位置（如桌面）右键-&gt;Git Bash Here，输入 <code>$ npm install hexo-cli -g</code></p><p>安装完成后输入<code>$ hexo -v</code>显示版本号即可</p><p>顺手把C:\Users\Administrator\AppData\Roaming\npm\node_modules\hexo-cli\bin加入Path</p></li></ul>        <h2 id="2-内网配置（本地）"   >          <a href="#2-内网配置（本地）" class="heading-link"><i class="fas fa-link"></i></a>2.内网配置（本地）</h2>      <ul><li><p><strong>2.1. 正片</strong></p><p>在任意位置新建文件夹，任意取名（如blog），这个文件夹将会成为你Blog的数据库</p><p>输入<code>$ hexo init myblog</code>，生成一个名叫myblog的文件夹</p><p>如果文件夹路径为”D:\blog，则路径”D:\blog\myblog”就是”<strong>Hexo 的根目录</strong>“</p><p>进入Hexo的根目录，输入</p><p><code>$ cd my blog</code></p><p><code>$ hexo s</code></p><p>(s = server)在浏览器地址栏输入127.0.0.1:4000就好啦</p></li><li><p><strong>2.2. 番外</strong></p><p><code>$ hexo server -p xxxx</code></p><p>可以开一个127.0.0.1:xxxx</p><p>若提示”Port 4000 has been used.”，到任务管理器把Node.js杀掉即可</p><p>配置淘宝镜像：<code>npm config set registry https://registry.npm.taobao.org</code></p></li><li><p><strong>2.3. 换肤</strong></p><p>Hexo Theme官网：<span class="exturl"><a class="exturl__link"   href="https://hexo.io/themes/"  target="_blank" rel="noopener">点此进入</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p><p>选一个好看的主题Git clone，下载zip文件</p><p>把解压后文件放在”\myblog\themes\主题名”下即可</p><p>同时把根目录下_config.yml里”Extensions”下theme后面更改为主题名</p><p>如果提示”WARN No layout: index.html”就是没放对</p></li></ul>        <h2 id="待续…"   >          <a href="#待续…" class="heading-link"><i class="fas fa-link"></i></a>待续…</h2>      ]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        &lt;h2 id=&quot;1-准备工作&quot;   &gt;
+          &lt;a href=&quot;#1-准备工作&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;1. 准备工作&lt;/h2&gt;
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
